@@ -143,6 +143,11 @@ The conclusion after each table is listed.
 |10| 0.001| 128 |1.0|1.0|92%
 | 50| 0.001  | 128  |  1.0 | 1.0  |92%
 
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Accuracy
+|--:|--:|--:|--:|--:|
+|10| 0.001|128 |1.0|1.0|92%
+|50| 0.001| 128 |  1.0 | 1.0  |92%
+
 
 Conclusion: Increasing the number of epochs from 10 to 50 did not increase the accuracy with no dropout.
 
