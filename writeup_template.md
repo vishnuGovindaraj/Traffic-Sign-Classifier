@@ -143,14 +143,14 @@ The conclusion after each table is listed.
 |10| 0.001| 128 |1.0|1.0|92%
 | 50| 0.001  | 128  |  1.0 | 1.0  |92%
 
-|Classid|SignName|
-|--:|--:|
-|1| Speed limit (30km/h)
-|11| Right-of-way at the next intersection
-|25| Road work
-|26| Traffic signals
-|3| Speed limit (60km/h)
-|34| Turn left ahead
+|Epochs|LearningRate|BatchSize|KeepProb1
+|--:|--:|--:|--:|
+|1| Speed limit (30km/h)| |
+|11| Right-of-way at the next intersection| |
+|25| Road work| |
+|26| Traffic signals| |
+|3| Speed limit (60km/h)| |
+|34| Turn left ahead| |
 
 
 Conclusion: Increasing the number of epochs from 10 to 50 did not increase the accuracy with no dropout.
