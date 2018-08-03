@@ -29,6 +29,7 @@ The goals / steps of this project are the following:
 [image10]: ./images/softmax4.png "softmax of image 4"
 [image11]: ./images/softmax5.png "softmax of image 5"
 [image12]: ./images/softmax6.png "softmax of image 6"
+[image13]: ./images/lenet5.png "lenet5 architecture"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -91,7 +92,7 @@ The grayscale image is then normalized
 
 The architecture I chose to implement was the LeNet5 architecture described in class with a few modifications.
 
-![broken image](lenet5.png "lenet5 architecture")
+![alt text][image13]
 
 The LeNet5 architecture has been modified to receive grayscale images and uses dropout.
  - The original LeNet was set to receive color images, this is modified to 32x32x1 because of grayscale
@@ -115,7 +116,7 @@ The LeNet5 architecture has been modified to receive grayscale images and uses d
  
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyper parameters such as learning rate.
 
 I experimented with different values for dropout, epochs, learning rate and batch size. I did not modify sigma, mu, filter size and strides or layer size.
 I used the optimizer provided in the LeNet lab solution (AdamOptimizer) since it is supposed to be more sophisticated than Stochastic Gradient Descent.
@@ -137,7 +138,7 @@ The following are tables where specific qualities are tested
 
 The conclusion after each table is listed
 
-|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy|
 |--:|--:|--:|--:|--:|
 |10| 0.001| 128 |1.0|1.0|92%
 | 50| 0.001  | 128  |  1.0 | 1.0  |92%
@@ -145,7 +146,7 @@ The conclusion after each table is listed
 
 Conclusion: Increasing the number of epochs from 10 to 50 did not increase the accuracy with no dropout
 
-|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy|
 |--:|--:|--:|--:|--:|
 | 10| 0.0001  | 128  |  1.0 | 1.0  |76%
 | 50| 0.0001  | 128  |  1.0 | 1.0  |85%
@@ -155,7 +156,7 @@ Conclusion: Increasing the number of epochs from 10 to 50 did not increase the a
 Conclusion: Learning rate is decreased from 0.001 to 0.0001. Even after 100 epochs the accuracy is not as good as when the learning rate was 0.001
 
 
-|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy|
 |--:|--:|--:|--:|--:|
 | 100| 0.001  | 256  |  1.0 | 1.0  |93%
 | 100| 0.0001  | 256  |  1.0 | 1.0  |85%
@@ -163,7 +164,7 @@ Conclusion: Learning rate is decreased from 0.001 to 0.0001. Even after 100 epoc
 
 Conclusion: Batch size was increased from 128 to 256. 2 different learning rates are tested and 0.001 gives the better result
 
-|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy|
 |--:|--:|--:|--:|--:|
 |10| 0.001| 256 |0.8|1.0|86%
 |10| 0.001  | 256  |  0.8 | 0.5  |90%
@@ -172,7 +173,7 @@ Conclusion: Batch size was increased from 128 to 256. 2 different learning rates
 Conclusion: Row 1 has dropout at the convolutional layers but not at the fully connected layers. Row 2 has dropout at both the convolutional layers and the fully connected layers. Row 2 has better accuracy
 
 
-|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy|
 |--:|--:|--:|--:|--:|
 |50| 0.001| 256 |0.8|1.0|92%
 |50| 0.001  | 256  |  0.8 | 0.5  |96%
@@ -182,7 +183,8 @@ Conclusion: Epochs is increased from 10 to 50. Row 2 still has better accuracy a
 
 Some more results from varying dropout rates.
 
-|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy
+
+|Epochs|LearningRate|BatchSize|KeepProb1|KeepProb2|Validation Accuracy|
 |--:|--:|--:|--:|--:|
 |50| 0.001| 256 |0.9|0.5|96%
 |50| 0.001  | 256  |  0.8 | 0.6  |95%
